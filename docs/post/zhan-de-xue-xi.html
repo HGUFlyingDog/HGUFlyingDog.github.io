@@ -43,7 +43,7 @@
 <meta property="og:url" content="https://HGUFlyingDog.github.io/post/zhan-de-xue-xi.html">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/86895196?v=4">
 <title>栈的学习</title>
-
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
 
 </head>
@@ -117,7 +117,76 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <li>链表需要先申请空间然后，修改前一个节点的指针来完成</li>
 </ul>
 <h3>代码部分</h3>
-<p><del>偷个懒一会写</del></p></div>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-c">//栈的初始化</span>
+ <span class="pl-en">StackInit</span>(<span class="pl-s1">Stack</span><span class="pl-c1">*</span> <span class="pl-s1">ps</span>)
+{
+	<span class="pl-en">assert</span>(<span class="pl-s1">ps</span>);
+	<span class="pl-c">//assert 用来防止传参为空指针从而避免导致错误</span>
+	<span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">a</span> <span class="pl-c1">=</span> (<span class="pl-smi">STDataType</span><span class="pl-c1">*</span>)<span class="pl-en">malloc</span>(<span class="pl-k">sizeof</span>(<span class="pl-s1">STDataType</span>) <span class="pl-c1">*</span> <span class="pl-c1">4</span>);
+	<span class="pl-k">if</span> (<span class="pl-s1">ps</span><span class="pl-c1">==</span><span class="pl-c1">NULL</span>)
+	{
+		<span class="pl-en">perror</span>(<span class="pl-s">"malloc fail"</span>);
+		<span class="pl-en">exit</span>(<span class="pl-c1">-1</span>);
+	}
+	<span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">capacity</span> <span class="pl-c1">=</span> <span class="pl-c1">4</span>;
+	<span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">top</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>;
+}</pre></div>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-c">//入栈</span>
+<span class="pl-smi">void</span> <span class="pl-en">StackPush</span>(<span class="pl-smi">Stack</span><span class="pl-c1">*</span> <span class="pl-s1">ps</span>, <span class="pl-smi">STDataType</span> <span class="pl-s1">data</span>)
+{
+	<span class="pl-en">assert</span>(<span class="pl-s1">ps</span>);
+
+	<span class="pl-k">if</span> (<span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">top</span> <span class="pl-c1">==</span> <span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">capacity</span>)<span class="pl-c">//满了</span>
+	{
+		<span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">a</span> <span class="pl-c1">=</span> (<span class="pl-smi">STDataType</span><span class="pl-c1">*</span>)<span class="pl-en">realloc</span>(<span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">a</span>, <span class="pl-k">sizeof</span>(<span class="pl-s1">STDataType</span>) <span class="pl-c1">*</span> <span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">capacity</span> <span class="pl-c1">*</span> <span class="pl-c1">2</span>);
+		<span class="pl-k">if</span> (<span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">a</span> <span class="pl-c1">==</span> <span class="pl-c1">NULL</span>)
+		{
+			<span class="pl-en">perror</span>(<span class="pl-s">"realloc fail"</span>);
+		}
+	}
+	<span class="pl-k">else</span>
+	{
+		<span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">a</span>[<span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">top</span> <span class="pl-c1">=</span> <span class="pl-s1">data</span>];
+		<span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">top</span><span class="pl-c1">++</span>;
+	}
+}</pre></div>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-c">//自定义的函数，方便调试代码</span>
+<span class="pl-smi">void</span> <span class="pl-en">StackPrint</span>(<span class="pl-smi">Stack</span><span class="pl-c1">*</span> <span class="pl-s1">ps</span>)
+{
+	<span class="pl-k">for</span> (<span class="pl-smi">int</span> <span class="pl-s1">i</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>; <span class="pl-s1">i</span><span class="pl-c1">&lt;</span><span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">top</span>; <span class="pl-s1">i</span><span class="pl-c1">++</span>)
+	{
+		<span class="pl-en">printf</span>(<span class="pl-s">"%d "</span>, <span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">a</span>[<span class="pl-s1">i</span>]);
+	}
+	<span class="pl-en">printf</span>(<span class="pl-s">"\n"</span>);
+}</pre></div>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-c">// 出栈</span>
+<span class="pl-smi">void</span> <span class="pl-en">StackPop</span>(<span class="pl-smi">Stack</span><span class="pl-c1">*</span> <span class="pl-s1">ps</span>)
+{
+	<span class="pl-en">assert</span>(<span class="pl-s1">ps</span>);
+	<span class="pl-en">assert</span>(!<span class="pl-en">StackEmpty</span>(<span class="pl-s1">ps</span>));
+	<span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">top</span><span class="pl-c1">--</span>;
+}</pre></div>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-c">// 获取栈中有效元素个数</span>
+<span class="pl-smi">int</span> <span class="pl-en">StackSize</span>(<span class="pl-smi">Stack</span><span class="pl-c1">*</span> <span class="pl-s1">ps</span>)
+{
+	<span class="pl-en">printf</span>(<span class="pl-s">"有效元素个数为%d\n"</span>, <span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">top</span> );<span class="pl-c">// 为了方便调试</span>
+	<span class="pl-k">return</span> <span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">top</span> ;
+}</pre></div>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-c">// 检测栈是否为空，如果为空返回非零结果，如果不为空返回0</span>
+<span class="pl-smi">int</span> <span class="pl-en">StackEmpty</span>(<span class="pl-smi">Stack</span><span class="pl-c1">*</span> <span class="pl-s1">ps</span>)
+{
+	<span class="pl-k">return</span> !(<span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">top</span>);
+}</pre></div>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-c">//栈的销毁</span>
+<span class="pl-smi">void</span> <span class="pl-en">StackDestroy</span>(<span class="pl-smi">Stack</span><span class="pl-c1">*</span> <span class="pl-s1">ps</span>)
+{
+	<span class="pl-en">assert</span>(<span class="pl-s1">ps</span>);
+
+	<span class="pl-en">free</span>(<span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">a</span>);
+	<span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">a</span> <span class="pl-c1">=</span> <span class="pl-c1">NULL</span>;
+	<span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">top</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>;
+	<span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">capacity</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>;
+}</pre></div></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
