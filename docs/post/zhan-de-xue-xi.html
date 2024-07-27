@@ -18,12 +18,7 @@
 
 ### 栈的主要操作
 
-* 压栈：入数据在**栈顶**
-* 出栈：出数据在**栈顶**
-
-### 栈的实现
-
-栈的实现一般通过**数组**和**链表**的形式去实现。">
+* 栈的**插入操作**，叫作进栈，也称压栈、入栈。">
 <meta property="og:title" content="栈的学习">
 <meta property="og:description" content="# 栈
 ### 栈的定义和特点
@@ -33,12 +28,7 @@
 
 ### 栈的主要操作
 
-* 压栈：入数据在**栈顶**
-* 出栈：出数据在**栈顶**
-
-### 栈的实现
-
-栈的实现一般通过**数组**和**链表**的形式去实现。">
+* 栈的**插入操作**，叫作进栈，也称压栈、入栈。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://HGUFlyingDog.github.io/post/zhan-de-xue-xi.html">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/86895196?v=4">
@@ -106,9 +96,22 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </ul>
 <h3>栈的主要操作</h3>
 <ul>
-<li>压栈：入数据在<strong>栈顶</strong></li>
-<li>出栈：出数据在<strong>栈顶</strong></li>
+<li>栈的<strong>插入操作</strong>，叫作进栈，也称压栈、入栈。</li>
+<li>栈的<strong>删除操作</strong>，叫作出栈，也称作弹栈。</li>
 </ul>
+<h3>进栈出栈变化形式</h3>
+<p>最先入栈不一定是最先出栈的，比如入栈顺序是1,2,3,</p>
+<ul>
+<li>第一种：是1、2、3进，再3、2、1出。		出栈顺序是3 2 1</li>
+<li>第二种：是1进，1出，2进，2出，3进，3出。     出栈顺序是1 2 3</li>
+<li>第三种：1进，2进，2出，1出，3进，3出。	出栈顺序是 2 1 3</li>
+<li>第四种：1进，1出，2进，3进，3出，2出。        出栈顺序是1 3  2</li>
+<li>第五种：1进，2进，2出，3进，3出，1出。        出栈顺序是2 3 1</li>
+</ul>
+<p>出栈序列种类数公式为<br>
+$$<br>
+C(2n,n)(n+1)<br>
+$$</p>
 <h3>栈的实现</h3>
 <p>栈的实现一般通过<strong>数组</strong>和<strong>链表</strong>的形式去实现。</p>
 <p>通过数组相对于通过链表有优势，因为数组在尾插方面比链表有优势：</p>
@@ -139,6 +142,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 	<span class="pl-k">if</span> (<span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">top</span> <span class="pl-c1">==</span> <span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">capacity</span>)<span class="pl-c">//满了</span>
 	{
 		<span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">a</span> <span class="pl-c1">=</span> (<span class="pl-smi">STDataType</span><span class="pl-c1">*</span>)<span class="pl-en">realloc</span>(<span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">a</span>, <span class="pl-k">sizeof</span>(<span class="pl-s1">STDataType</span>) <span class="pl-c1">*</span> <span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">capacity</span> <span class="pl-c1">*</span> <span class="pl-c1">2</span>);
+        <span class="pl-c">//扩容一般是原大小的2倍</span>
 		<span class="pl-k">if</span> (<span class="pl-s1">ps</span><span class="pl-c1">-&gt;</span><span class="pl-c1">a</span> <span class="pl-c1">==</span> <span class="pl-c1">NULL</span>)
 		{
 			<span class="pl-en">perror</span>(<span class="pl-s">"realloc fail"</span>);

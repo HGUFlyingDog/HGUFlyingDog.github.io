@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>HGUFlyingDog 的博客</title><link>https://HGUFlyingDog.github.io</link><description>芜湖起飞！！</description><copyright>HGUFlyingDog 的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/86895196?v=4</url><title>avatar</title><link>https://HGUFlyingDog.github.io</link></image><lastBuildDate>Fri, 26 Jul 2024 14:09:21 +0000</lastBuildDate><managingEditor>HGUFlyingDog 的博客</managingEditor><ttl>60</ttl><webMaster>HGUFlyingDog 的博客</webMaster><item><title>栈的学习</title><link>https://HGUFlyingDog.github.io/post/zhan-de-xue-xi.html</link><description># 栈&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>HGUFlyingDog 的博客</title><link>https://HGUFlyingDog.github.io</link><description>芜湖起飞！！</description><copyright>HGUFlyingDog 的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/86895196?v=4</url><title>avatar</title><link>https://HGUFlyingDog.github.io</link></image><lastBuildDate>Sat, 27 Jul 2024 12:07:57 +0000</lastBuildDate><managingEditor>HGUFlyingDog 的博客</managingEditor><ttl>60</ttl><webMaster>HGUFlyingDog 的博客</webMaster><item><title>栈的学习</title><link>https://HGUFlyingDog.github.io/post/zhan-de-xue-xi.html</link><description># 栈&#13;
 ### 栈的定义和特点&#13;
 &#13;
 * 栈是一种特殊的**线性表**，只能在表尾（栈顶）去进行插入和删除&#13;
@@ -7,9 +7,4 @@
 &#13;
 ### 栈的主要操作&#13;
 &#13;
-* 压栈：入数据在**栈顶**&#13;
-* 出栈：出数据在**栈顶**&#13;
-&#13;
-### 栈的实现&#13;
-&#13;
-栈的实现一般通过**数组**和**链表**的形式去实现。</description><guid isPermaLink="true">https://HGUFlyingDog.github.io/post/zhan-de-xue-xi.html</guid><pubDate>Fri, 26 Jul 2024 14:08:55 +0000</pubDate></item><item><title>博客网站的测试</title><link>https://HGUFlyingDog.github.io/post/bo-ke-wang-zhan-de-ce-shi.html</link><description>Hello World！。</description><guid isPermaLink="true">https://HGUFlyingDog.github.io/post/bo-ke-wang-zhan-de-ce-shi.html</guid><pubDate>Fri, 12 Jul 2024 13:13:49 +0000</pubDate></item></channel></rss>
+* 栈的**插入操作**，叫作进栈，也称压栈、入栈。</description><guid isPermaLink="true">https://HGUFlyingDog.github.io/post/zhan-de-xue-xi.html</guid><pubDate>Fri, 26 Jul 2024 14:08:55 +0000</pubDate></item><item><title>博客网站的测试</title><link>https://HGUFlyingDog.github.io/post/bo-ke-wang-zhan-de-ce-shi.html</link><description>Hello World！。</description><guid isPermaLink="true">https://HGUFlyingDog.github.io/post/bo-ke-wang-zhan-de-ce-shi.html</guid><pubDate>Fri, 12 Jul 2024 13:13:49 +0000</pubDate></item></channel></rss>
