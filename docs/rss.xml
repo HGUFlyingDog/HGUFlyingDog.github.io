@@ -1,5 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>HGUFlyingDog 的博客</title><link>https://HGUFlyingDog.github.io</link><description>芜湖起飞！！</description><copyright>HGUFlyingDog 的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/86895196?v=4</url><title>avatar</title><link>https://HGUFlyingDog.github.io</link></image><lastBuildDate>Sun, 04 Aug 2024 03:27:34 +0000</lastBuildDate><managingEditor>HGUFlyingDog 的博客</managingEditor><ttl>60</ttl><webMaster>HGUFlyingDog 的博客</webMaster><item><title>树</title><link>https://HGUFlyingDog.github.io/post/shu.html</link><description># 树&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>HGUFlyingDog 的博客</title><link>https://HGUFlyingDog.github.io</link><description>芜湖起飞！！</description><copyright>HGUFlyingDog 的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/86895196?v=4</url><title>avatar</title><link>https://HGUFlyingDog.github.io</link></image><lastBuildDate>Mon, 05 Aug 2024 09:03:22 +0000</lastBuildDate><managingEditor>HGUFlyingDog 的博客</managingEditor><ttl>60</ttl><webMaster>HGUFlyingDog 的博客</webMaster><item><title>二叉树</title><link>https://HGUFlyingDog.github.io/post/er-cha-shu.html</link><description># 二叉树&#13;
+&#13;
+### 二叉树的定义&#13;
+&#13;
+**二叉树（Binary Tree）**是n（n≥0）个结点的有限集合，该集合或者为空集（称为空二叉树），或者由一个根结点和两棵互不相交的、分别称为根结点的左子树和右子树的二叉树组成。</description><guid isPermaLink="true">https://HGUFlyingDog.github.io/post/er-cha-shu.html</guid><pubDate>Mon, 05 Aug 2024 09:02:52 +0000</pubDate></item><item><title>树</title><link>https://HGUFlyingDog.github.io/post/shu.html</link><description># 树&#13;
 &#13;
 ### 树的定义&#13;
 &#13;
